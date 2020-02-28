@@ -12,4 +12,37 @@
 html{
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px, how? 10px/16px = 62.5%, being 16px the browser default size
+  font-family: sans-serif;
+}
+
+.form-container{
+  padding: 3rem 0 1px 0;
+  background-color: #03a9f4;
+}
+
+.input-field label {
+  color: #fff;
+  font-size: small;
+}
+
+.input-field input[type=text]:focus + label {
+  color: white;
+} 
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+input[type=text]:not(.browser-default) {
+  border-bottom: 1px solid white;
+  color: white;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid white;
+  -webkit-box-shadow: 0 1px 0 0 white;
+  box-shadow: 0 1px 0 0 white;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]) + label {
+  color: white;
 }
