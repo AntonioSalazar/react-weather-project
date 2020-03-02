@@ -24,7 +24,6 @@ const Form = () => {
         <form>
             <div className='input-field col s10'>
                 <select
-
                     name='country'
                     id='country'
                     value={country}
