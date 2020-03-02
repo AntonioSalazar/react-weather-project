@@ -1,15 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-const Form = () => {
+const Form = ({search, saveSearch, setRequest}) => {
 
 
-    //The state that will keep user selection
-    const [ search, saveSearch ] = useState({
-        country: '',
-        city: ''
-    });
 
     const [ error, setError ] = useState(false);
+
     // //extracting the values from the state
     const { country, city } = search;
 
@@ -34,6 +30,7 @@ const Form = () => {
         setError(false);
 
         //Send the info to the app component
+        setRequest(true);
 
     }
 
@@ -51,13 +48,13 @@ const Form = () => {
                     onChange={handleChange}
                 >
                     <option value='' disabled selected>Choose the Country</option>
-                    <option value="US">Estados Unidos</option>
-                    <option value="MX">México</option>
+                    <option value="US">United States</option>
+                    <option value="MX">Mexico</option>
                     <option value="AR">Argentina</option>
                     <option value="CO">Colombia</option>
                     <option value="CR">Costa Rica</option>
-                    <option value="ES">España</option>
-                    <option value="PE">Perú</option>
+                    <option value="ES">Spain</option>
+                    <option value="PE">Peru</option>
                 </select>
                 <label htmlFor='country'>Country</label>
             </div>  
