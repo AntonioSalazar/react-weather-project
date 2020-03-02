@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
-
+import Weather from './components/Weather';
 
 
 function App() {
@@ -15,6 +15,8 @@ function App() {
 
   const [ request, setRequest ] = useState(false);
 
+  const [ response, setResponse ] = useState({});
+
   useEffect(() => {
     const apiRequest = async () => {
       if (request) {
@@ -25,7 +27,7 @@ function App() {
         const request = await fetch(url);
         const response = await request.json();
   
-        console.log(response);
+        setResponse(response);
       }
     }
 
@@ -48,7 +50,9 @@ function App() {
               />
             </div>
             <div className='col m6 s12'>
-              2
+              <Weather
+                response={response}
+              />
             </div>
           </div>
         </div>

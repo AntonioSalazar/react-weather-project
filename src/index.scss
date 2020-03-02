@@ -54,3 +54,15 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   font-size: medium;
   text-align: center;
 }
+
+.weather {
+  font-size: 4rem!important
+}
+.weather span {
+  font-size: 2rem!important;
+  vertical-align: super;
+}
+
+.max-min-temp{
+  font-size: 1.6rem;
+}
