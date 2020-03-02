@@ -46,3 +46,11 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 input[type=text]:not(.browser-default):focus:not([readonly]) + label {
   color: white;
 }
+
+.custom-error{
+  padding: 2rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-size: medium;
+  text-align: center;
+}
