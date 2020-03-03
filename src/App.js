@@ -42,6 +42,8 @@ function App() {
     }
 
     apiRequest();
+
+    //eslint-disable-next-line
   }, [request]); 
 
   let component;
