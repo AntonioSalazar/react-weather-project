@@ -25,7 +25,7 @@ function App() {
       if (request) {
         const appIDSecret = process.env.REACT_APP_WEATHER_API_KEY;
 
-        const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appIDSecret}`
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appIDSecret}`
   
         const request = await fetch(url);
         const response = await request.json();
