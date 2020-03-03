@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Weather from './components/Weather';
+import Error from './components/Error';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
 
   const [ response, setResponse ] = useState({});
 
+  const [ error, setError ] = useState(false);
+
   useEffect(() => {
     const apiRequest = async () => {
       if (request) {
@@ -28,11 +31,28 @@ function App() {
         const response = await request.json();
   
         setResponse(response);
+        setRequest(false);
+
+        if (response.cod === '404') {
+          setError(true);
+        } else {
+          setError(false);
+        }
       }
     }
 
     apiRequest();
   }, [request]); 
+
+  let component;
+
+  if (error) {
+    component = <Error message='No results matching your search'/>
+  } else {
+    component =  <Weather
+                    response={response}
+                  />
+  }
 
   return (
     <Fragment>
@@ -50,9 +70,7 @@ function App() {
               />
             </div>
             <div className='col m6 s12'>
-              <Weather
-                response={response}
-              />
+              { component }
             </div>
           </div>
         </div>
