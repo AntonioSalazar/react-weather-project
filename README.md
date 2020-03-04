@@ -17,3 +17,8 @@ If a user doesnt make any selection:
 If a user looks for a city that doesnt exists:
 
 ![](public/imgs/no-match.png)
+
+
+Made with ❤️ by Antonio Salazar
+
+😗
